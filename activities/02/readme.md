@@ -129,7 +129,7 @@ $ creator_id="https://github.com/slsa-framework/oss-na24-slsa-workshop-organizat
 $ type=https://slsa.dev/publish/v0.1
 $ path/to/cosign verify-attestation "${image}" \
     --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-    --certificate-identity "${creator_id}" 
+    --certificate-identity "${creator_id}" \
     --type "${type}" | jq -r '.payload' | base64 -d | jq
 ```
 
